@@ -6,13 +6,17 @@ const initialState = {
 	locked: false
 };
 
+const PIN_LENGTH = 4;
+
 const lockReducer = (state = initialState, action) => {
 	switch(action.type){
 		case actionTypes.ENTER_PIN:{
-			if(state.display.length < 4){
+			// append if length less than PIN_LENGTH
+			if(state.display.length < PIN_LENGTH){
 				return {
 					...state,
-					display: state.display + action.number
+					display: state.display + action.number,
+					invalid: false
 				}
 			}
 			return state;
@@ -24,7 +28,7 @@ const lockReducer = (state = initialState, action) => {
 			}
 		}
 		case actionTypes.SUBMIT_PIN:{
-			if(state.display.length < 4){
+			if(state.display.length < PIN_LENGTH){
 				return {
 					...state,
 					display: '',
@@ -32,6 +36,7 @@ const lockReducer = (state = initialState, action) => {
 				}
 			}
 			else if(state.locked){
+				// locked and pin matched
 				if(state.pin == state.display){
 					return {
 						...state,
@@ -40,6 +45,7 @@ const lockReducer = (state = initialState, action) => {
 						locked: false
 					};
 				}
+				// locked and pin not matched
 				else{
 					return {
 						...state,
@@ -49,6 +55,7 @@ const lockReducer = (state = initialState, action) => {
 				}
 			}
 			else{
+				// safe open
 				return {
 					...state,
 					display: '',

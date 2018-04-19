@@ -2,7 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../actions';
-import Button from './Button';
+import Button from '../components/Button';
+
+import enterImage from '../images/enter.png';
 
 const LockKeyBoard = props => (
 	<div className="lock-left-keyboard">
@@ -17,7 +19,7 @@ const LockKeyBoard = props => (
 		<Button onClick={ () => props.enterPIN(9) } value={9}/>
 		<Button onClick={ () => props.clearPIN() } value='CLR'/>
 		<Button onClick={ () => props.enterPIN(0) } value={0}/>
-		<Button onClick={ () => props.submitPIN() } value='ENTER'/>
+		<Button onClick={ () => props.submitPIN() } value={<img src={enterImage}/>}/>
 	</div>
 );
 

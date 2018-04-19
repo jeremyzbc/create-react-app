@@ -39,5 +39,8 @@
     "yarn.lock": [
       "git rm --cached"
     ]
+  },
+  "dependencies": {
+    "classnames": "^2.2.5"
   }
 }
