@@ -7,7 +7,7 @@ import LockIndicator from './LockIndicator';
 
 const App = () => (
 	<div className="lock">
-		<img src={bgImage} style={{opacity: 0.3, maxWidth: '100%', left: '50%', transform: 'translateX(-50%)', top:'-12px', outline: '1px solid', position: 'absolute'}} />
+		<img src={bgImage} style={{maxWidth: '100%', left: '50%', transform: 'translateX(-50%)', top:'500px', position: 'absolute'}} />
 		<section className="lock-left">
 			<LockKeyBoard />
 		</section>

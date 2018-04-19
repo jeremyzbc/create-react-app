@@ -21,9 +21,24 @@
 }
 
 .lock-left-keyboard{
-	border: 3px solid #1D2C3B;
-	background-color: red;
+	border: 3px solid #000000;
+	background-color: #666666;
 	width: 580px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+}
+
+.lock-left-keyboard-button{
+	flex: 0 0 33.333333%;
+	background-color: #fff;
+	height: 75px;
+	text-align: center;
+	line-height: 75px;
+	vertical-align: middle;
+	border: 3px solid #666;
+	font-size: 24px;
+	cursor: pointer;
 }
 
 .lock-right{
@@ -34,8 +49,8 @@
 }
 
 .lock-right-display{
-	border: 10px solid #1D2C3B;
-	background-color: red;
+	border: 10px solid #080202;
+	background-color: #9EA18B;
 	width: 800px;
 	border-radius: 25px;
 
@@ -43,10 +58,13 @@
 }
 
 .lock-right-indicator{
-	background-color: #1D523B;
 	margin-top: 40px;
 	width: 70px;
 	height: 70px;
-	border: 5px solid #1D2C3B;
+	border: 5px solid #000000;
 	border-radius: 50%;
+}
+
+.lock-right-indicator-success{
+	background-color: #008100;
 }
